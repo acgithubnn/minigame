@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>고급 에임 트레이너</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>고급 에임 트레이너</h1>
+      <div class="stats">
+        <div class="score">점수: <span id="score">0</span></div>
+        <div class="time">남은 시간: <span id="time">10</span>초</div>
+        <div class="avg-time">
+          평균 반응 시간: <span id="avgTime">0</span>ms
+        </div>
+      </div>
+      <div id="gameArea">
+        <div id="target"></div>
+      </div>
+      <button id="startButton">시작</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

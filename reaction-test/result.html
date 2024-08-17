@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응 속도 챌린지 결과</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="result-styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>반응 속도 챌린지 결과</h1>
+      <div class="result-card">
+        <div class="result-icon" id="resultIcon"></div>
+        <p id="averageTime" class="result-time"></p>
+        <p id="tier" class="result-tier"></p>
+        <p id="message" class="result-message"></p>
+      </div>
+      <button id="retryButton" onclick="location.href='index.html'">
+        다시 도전
+      </button>
+    </div>
+    <script src="result.js"></script>
+  </body>
+</html>

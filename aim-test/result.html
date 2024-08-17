@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>에임 트레이너 결과</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="result-styles.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>에임 트레이너 결과</h1>
+      <div class="result-container">
+        <div class="result-item">점수: <span id="finalScore"></span></div>
+        <div class="result-item">
+          평균 반응 시간: <span id="avgReactionTime"></span> ms
+        </div>
+        <div id="tierResult" class="tier-result"></div>
+        <div id="tierMessage" class="tier-message"></div>
+      </div>
+      <button id="retryButton" onclick="location.href='index.html'">
+        다시 도전
+      </button>
+      <button id="shareButton">결과 공유하기</button>
+    </div>
+    <script src="result.js"></script>
+  </body>
+</html>

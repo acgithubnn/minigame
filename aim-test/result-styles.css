@@ -1,0 +1,55 @@
+.result-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.result-item {
+  font-size: 1.2em;
+  margin: 15px 0;
+  color: #e0e0e0;
+}
+
+.tier-result {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 30px 0 15px;
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.tier-message {
+  font-size: 1.2em;
+  color: #a0a0a0;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+#retryButton,
+#shareButton {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  margin: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#retryButton:hover,
+#shareButton:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+#shareButton {
+  background-color: #3b5998;
+}
+
+#shareButton:hover {
+  background-color: #344e86;
+}
