@@ -13,7 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
           case "aim":
             window.location.href = "aim-test/index.html";
             break;
-          // 추후 더 많은 게임을 추가할 수 있습니다
+          case "memory":
+            window.location.href = "card-test/index.html";
+            break;
         }
       }
     });

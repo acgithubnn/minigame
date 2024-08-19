@@ -8,20 +8,31 @@
   --success-color: #2ecc71;
 }
 
-body {
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
   font-family: "Roboto", sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
+}
+
+.page-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   min-height: 100vh;
-  margin: 0;
-  padding: 20px;
-  box-sizing: border-box;
 }
 
 .container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#game-area {
   background-color: var(--bg-color);
   border-radius: 20px;
   padding: 40px;
@@ -121,37 +132,16 @@ h1 {
   color: var(--highlight-color);
 }
 
-.result-card {
-  background-color: white;
-  border-radius: 15px;
-  padding: 30px;
-  margin-top: 30px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+.ad-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  background-color: var(--bg-color);
 }
 
-.result-icon {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 20px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.result-time {
-  font-size: 2rem;
-}
-
-.result-tier {
-  font-size: 1.8rem;
-  color: #f39c12;
-}
-
-.result-message {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: var(--text-color);
-  font-weight: 400;
+.ad-banner {
+  display: inline-block;
 }
 
 @keyframes pulse {

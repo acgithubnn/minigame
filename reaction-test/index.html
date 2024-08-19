@@ -11,16 +11,34 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <div id="game-area">
-        <h1>반응 속도 챌린지</h1>
-        <p id="instruction">준비되면 시작 버튼을 누르세요</p>
-        <div id="clickArea">
-          <span id="clickInstruction">대기중...</span>
+    <div class="page-wrapper">
+      <div class="container">
+        <div id="game-area">
+          <h1>반응 속도 챌린지</h1>
+          <p id="instruction">준비되면 시작 버튼을 누르세요</p>
+          <div id="clickArea">
+            <span id="clickInstruction">대기중...</span>
+          </div>
+          <button id="startButton">시작</button>
+          <p id="result"></p>
+          <p id="attemptCount">시도: 0 / 3</p>
         </div>
-        <button id="startButton">시작</button>
-        <p id="result"></p>
-        <p id="attemptCount">시도: 0 / 3</p>
+      </div>
+      <div class="ad-container">
+        <div class="ad-banner">
+          <ins
+            class="kakao_ad_area"
+            style="display: none"
+            data-ad-unit="DAN-g78Yb9QoFxH0uLhL"
+            data-ad-width="320"
+            data-ad-height="100"
+          ></ins>
+          <script
+            type="text/javascript"
+            src="//t1.daumcdn.net/kas/static/ba.min.js"
+            async
+          ></script>
+        </div>
       </div>
     </div>
     <script src="script.js"></script>

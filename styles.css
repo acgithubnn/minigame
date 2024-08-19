@@ -44,6 +44,7 @@ h1 span {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 3rem;
+  padding: 2rem 0;
 }
 
 .game-card {
@@ -138,4 +139,21 @@ h1 span {
 
 .game-card:hover {
   animation: pulse 1.5s infinite;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 15vh;
+}
+
+.ad-container {
+  margin-top: auto;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.ad-banner {
+  display: inline-block;
 }

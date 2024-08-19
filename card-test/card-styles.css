@@ -1,0 +1,155 @@
+:root {
+  --bg-color: #1a1a2e;
+  --text-color: #ffffff;
+  --accent-color: #16213e;
+  --highlight-color: #0f3460;
+  --card-color: #e94560;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 5vh;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin: 0 0 2rem;
+  text-align: center;
+}
+
+h1 span {
+  font-weight: 600;
+  color: var(--card-color);
+}
+
+.game-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.score,
+.time {
+  font-size: 1.5rem;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  aspect-ratio: 1;
+  background-color: var(--accent-color);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card.flipped {
+  background-color: var(--highlight-color);
+}
+
+.controls {
+  text-align: center;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.difficulty-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.difficulty-btn {
+  background-color: rgba(233, 69, 96, 0.1);
+  color: var(--card-color);
+  border: 2px solid var(--card-color);
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 5px;
+}
+
+.difficulty-btn:hover,
+.difficulty-btn.active {
+  background-color: var(--card-color);
+  color: var(--text-color);
+}
+
+.start-btn {
+  background-color: var(--card-color);
+  color: var(--text-color);
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(233, 69, 96, 0.2);
+}
+
+.start-btn:hover {
+  background-color: #d63a52;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(233, 69, 96, 0.3);
+}
+
+@media (max-width: 600px) {
+  .difficulty-container {
+    flex-direction: column;
+  }
+
+  .difficulty-btn {
+    margin: 5px 0;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 15vh;
+}
+
+.ad-container {
+  margin-top: auto;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.ad-banner {
+  display: inline-block;
+}
