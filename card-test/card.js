@@ -132,17 +132,28 @@ function checkMatch() {
 
   if (document.querySelectorAll(".flipped").length === cards.length) {
     clearInterval(timerInterval);
-    setTimeout(() => {
-      alert(
-        `Congratulations! You've completed the game with a score of ${score}`
-      );
-    }, 500);
+    endGame(true);
   }
 }
 
-function endGame() {
+function endGame(isSuccess = false) {
   canFlip = false;
-  alert(`Time's up! Your final score is ${score}`);
+  const timeTaken = getTimeTaken();
+  localStorage.setItem("memoryGameScore", score);
+  localStorage.setItem("memoryGameTime", timeTaken);
+  localStorage.setItem("memoryGameDifficulty", difficulty);
+  window.location.href = "/card-test/result.html";
+}
+
+function getTimeTaken() {
+  const totalSeconds =
+    difficulty === "easy" ? 60 : difficulty === "medium" ? 90 : 120;
+  const secondsTaken = totalSeconds - timeLeft;
+  const minutes = Math.floor(secondsTaken / 60)
+    .toString()
+    .padStart(2, "0");
+  const seconds = (secondsTaken % 60).toString().padStart(2, "0");
+  return `${minutes}:${seconds}`;
 }
 
 function setDifficulty(level) {

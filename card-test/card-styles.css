@@ -137,13 +137,6 @@ h1 span {
   }
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin-top: 15vh;
-}
-
 .ad-container {
   margin-top: auto;
   padding: 20px 0;

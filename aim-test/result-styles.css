@@ -1,29 +1,29 @@
 .result-container {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
-  padding: 30px;
+  padding: 20px;
   margin-top: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .result-item {
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin: 15px 0;
   color: #e0e0e0;
 }
 
 .tier-result {
-  font-size: 2.5em;
+  font-size: 2.2em;
   font-weight: bold;
-  margin: 30px 0 15px;
+  margin: 25px 0 15px;
   color: #ffd700;
   text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 .tier-message {
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: #a0a0a0;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   font-style: italic;
 }
 
@@ -32,12 +32,14 @@
   background-color: #4caf50;
   color: white;
   border: none;
-  padding: 15px 30px;
+  padding: 12px 25px;
   margin: 10px;
   font-size: 1em;
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s, transform 0.3s;
+  width: 80%;
+  max-width: 200px;
 }
 
 #retryButton:hover,
@@ -52,4 +54,29 @@
 
 #shareButton:hover {
   background-color: #344e86;
+}
+
+@media (max-width: 600px) {
+  .result-container {
+    padding: 15px;
+  }
+
+  .result-item {
+    font-size: 1em;
+  }
+
+  .tier-result {
+    font-size: 1.8em;
+  }
+
+  .tier-message {
+    font-size: 1em;
+  }
+
+  #retryButton,
+  #shareButton {
+    padding: 10px 20px;
+    font-size: 0.9em;
+    width: 90%;
+  }
 }

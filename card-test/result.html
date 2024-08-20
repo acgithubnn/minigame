@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메모리 게임 결과</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="result-styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>메모리 게임 <span>결과</span></h1>
+      <div class="result-card">
+        <div class="result-item">
+          <span class="result-label">최종 점수:</span>
+          <span id="finalScore" class="result-value"></span>
+        </div>
+        <div class="result-item">
+          <span class="result-label">소요 시간:</span>
+          <span id="timeTaken" class="result-value"></span>
+        </div>
+        <div class="result-item">
+          <span class="result-label">난이도:</span>
+          <span id="difficulty" class="result-value"></span>
+        </div>
+        <div id="performanceMessage" class="performance-message"></div>
+      </div>
+      <div class="controls">
+        <button id="playAgainBtn" class="game-btn">다시 하기</button>
+        <button id="backToMenuBtn" class="game-btn">메뉴로 돌아가기</button>
+      </div>
+    </div>
+    <script src="result.js"></script>
+  </body>
+</html>
