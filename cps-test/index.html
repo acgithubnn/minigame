@@ -16,13 +16,21 @@
       <header>
         <h1>MiniGame <span>Hub</span></h1>
       </header>
+      <a href="/index.html" class="other-games-btn">다른 게임 플레이하기</a>
       <main>
         <div class="game-card">
           <h2>CPS Test</h2>
           <p>Test your clicking speed</p>
           <div class="game-area" id="clickArea">
-            <div id="clickCount">0</div>
-            <div id="timeLeft">10.0</div>
+            <div id="gameInfo" class="hidden">
+              <div id="clickCount">0</div>
+              <div id="timeLeft">10.0</div>
+            </div>
+            <div id="startInfo">
+              <p>'시작' 버튼을 눌러 게임을 시작하세요.</p>
+              <p>10초 동안 최대한 빠르게 클릭하세요!</p>
+              <button id="startButton" class="game-button">시작</button>
+            </div>
             <div id="clickMarkers"></div>
           </div>
           <div class="stats">
@@ -32,10 +40,9 @@
           <div class="chart-container">
             <canvas id="cpsChart"></canvas>
           </div>
-          <button id="startButton" class="game-button">Start</button>
         </div>
       </main>
-      <a href="index.html" class="back-button">Back to Main</a>
+      <a href="index.html" class="back-button">메인으로 돌아가기</a>
     </div>
     <script src="cps-test.js"></script>
   </body>

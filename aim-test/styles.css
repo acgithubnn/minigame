@@ -4,6 +4,8 @@
   --target-color: #16213e;
   --target-inner-color: #0f3460;
   --button-color: #e94560;
+  --other-games-button-color: #3498db;
+  --other-games-button-hover-color: #2980b9;
 }
 
 body {
@@ -78,8 +80,8 @@ h1 {
   border-radius: 50%;
 }
 
-#startButton {
-  background-color: var(--button-color);
+#startButton,
+#otherGamesButton {
   color: white;
   border: none;
   padding: 10px 20px;
@@ -89,6 +91,13 @@ h1 {
   transition: all 0.3s;
   width: 100%;
   max-width: 200px;
+  margin: 10px auto;
+  display: block;
+  text-align: center;
+}
+
+#startButton {
+  background-color: var(--button-color);
 }
 
 #startButton:hover {
@@ -98,6 +107,17 @@ h1 {
 
 #startButton:active {
   transform: translateY(-1px);
+}
+
+#otherGamesButton {
+  background-color: var(--other-games-button-color);
+  text-decoration: none;
+}
+
+#otherGamesButton:hover {
+  background-color: var(--other-games-button-hover-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
 }
 
 .ad-container {
@@ -133,5 +153,11 @@ h1 {
   #target::after {
     width: 12px;
     height: 12px;
+  }
+
+  #startButton,
+  #otherGamesButton {
+    font-size: 14px;
+    padding: 8px 16px;
   }
 }

@@ -1,0 +1,67 @@
+.result-card {
+  background-color: var(--card-bg-color);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#resultInfo {
+  margin-bottom: 20px;
+}
+
+#resultInfo p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+#tierResult {
+  margin-bottom: 20px;
+}
+
+#tierName {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+#tierIcon {
+  font-size: 4rem;
+  margin: 20px 0;
+}
+
+#tierDescription {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+/* Tier colors */
+.tier-bronze {
+  color: #cd7f32;
+}
+.tier-silver {
+  color: #c0c0c0;
+}
+.tier-gold {
+  color: #ffd700;
+}
+.tier-platinum {
+  color: #e5e4e2;
+}
+.tier-diamond {
+  color: #b9f2ff;
+}
+.tier-challenger {
+  color: #ff4500;
+}
+
+@media (max-width: 600px) {
+  #tierName {
+    font-size: 2rem;
+  }
+
+  #tierIcon {
+    font-size: 3rem;
+  }
+}

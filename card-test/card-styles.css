@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
   margin: 0;
@@ -20,12 +20,13 @@ body {
 
 .container {
   width: 90%;
-  max-width: 1200px;
-  margin-top: 5vh;
+  max-width: 800px;
+  margin-top: 2rem;
+  position: relative;
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 300;
   letter-spacing: 2px;
   margin: 0 0 2rem;
@@ -33,7 +34,7 @@ h1 {
 }
 
 h1 span {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--card-color);
 }
 
@@ -41,11 +42,24 @@ h1 span {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
+  font-size: 1.2rem;
 }
 
-.score,
-.time {
-  font-size: 1.5rem;
+.other-games-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.other-games-btn:hover {
+  background-color: var(--highlight-color);
 }
 
 .game-board {
@@ -62,7 +76,7 @@ h1 span {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3rem;
+  font-size: 2rem;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -75,12 +89,18 @@ h1 span {
   background-color: var(--highlight-color);
 }
 
+.game-instructions,
 .controls {
   text-align: center;
-  margin-bottom: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.game-instructions p,
+.difficulty-explanation,
+.difficulty-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
 .difficulty-container {
@@ -93,7 +113,7 @@ h1 span {
   background-color: rgba(233, 69, 96, 0.1);
   color: var(--card-color);
   border: 2px solid var(--card-color);
-  padding: 10px 20px;
+  padding: 8px 15px;
   font-size: 0.9rem;
   font-weight: bold;
   border-radius: 20px;
@@ -112,8 +132,8 @@ h1 span {
   background-color: var(--card-color);
   color: var(--text-color);
   border: none;
-  padding: 12px 30px;
-  font-size: 1.1rem;
+  padding: 10px 25px;
+  font-size: 1rem;
   font-weight: bold;
   border-radius: 25px;
   cursor: pointer;
@@ -127,22 +147,47 @@ h1 span {
   box-shadow: 0 6px 8px rgba(233, 69, 96, 0.3);
 }
 
-@media (max-width: 600px) {
-  .difficulty-container {
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .game-info {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .game-board {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card {
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    font-size: 1.5rem;
+  }
+
+  .card.flipped {
+    transform: rotateY(180deg);
+  }
+
+  .difficulty-container {
+    flex-wrap: wrap;
   }
 
   .difficulty-btn {
-    margin: 5px 0;
+    margin: 5px;
+  }
+
+  .other-games-btn {
+    position: static;
+    display: block;
+    margin: 1rem auto;
+    text-align: center;
   }
 }
 
-.ad-container {
-  margin-top: auto;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.ad-banner {
-  display: inline-block;
+@media (max-width: 480px) {
+  .game-board {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CPS Test Result - MiniGame Hub</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="result-styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>MiniGame <span>Hub</span></h1>
+      </header>
+      <main>
+        <div class="result-card">
+          <h2>CPS Test Result</h2>
+          <div id="resultInfo">
+            <p>Total Clicks: <span id="totalClicks"></span></p>
+            <p>Average CPS: <span id="averageCPS"></span></p>
+          </div>
+          <div id="tierResult">
+            <h3>Your Tier</h3>
+            <div id="tierName"></div>
+            <div id="tierIcon"></div>
+          </div>
+          <div id="tierDescription"></div>
+          <button id="retryButton" class="game-button">Try Again</button>
+        </div>
+      </main>
+      <a href="index.html" class="back-button">Back to Main</a>
+    </div>
+    <script src="result.js"></script>
+  </body>
+</html>

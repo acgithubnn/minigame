@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
           case "memory":
             window.location.href = "card-test/index.html";
             break;
+          case "cps":
+            window.location.href = "cps-test/index.html";
+            break;
         }
       }
     });

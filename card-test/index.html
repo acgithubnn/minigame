@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Memory Card Game - MiniGame Hub</title>
+    <title>Memory Card Game</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="card-styles.css" />
@@ -13,36 +13,45 @@
   <body>
     <div class="container">
       <h1>Memory <span>Card Game</span></h1>
+
       <div class="game-info">
         <div class="score">Score: <span id="score">0</span></div>
         <div class="time">Time: <span id="time">00:00</span></div>
       </div>
-      <div class="game-board" id="gameBoard"></div>
+
+      <a href="/index.html" class="other-games-btn">다른 게임 플레이하기</a>
+
+      <div id="gameBoard" class="game-board"></div>
+
+      <div class="game-instructions">
+        <p>
+          게임 설명: 카드를 뒤집어 같은 이모지 짝을 찾으세요. 모든 짝을 찾으면
+          게임이 종료됩니다.
+        </p>
+      </div>
+
       <div class="controls">
+        <p class="difficulty-explanation">난이도를 선택하세요:</p>
         <div class="difficulty-container">
-          <button id="easyBtn" class="difficulty-btn">Easy</button>
-          <button id="mediumBtn" class="difficulty-btn">Medium</button>
-          <button id="hardBtn" class="difficulty-btn">Hard</button>
+          <button id="easyBtn" class="difficulty-btn" data-difficulty="easy">
+            Easy (3x4)
+          </button>
+          <button
+            id="mediumBtn"
+            class="difficulty-btn"
+            data-difficulty="medium"
+          >
+            Medium (4x4)
+          </button>
+          <button id="hardBtn" class="difficulty-btn" data-difficulty="hard">
+            Hard (4x6)
+          </button>
         </div>
+        <p id="difficultyDescription" class="difficulty-description"></p>
         <button id="startBtn" class="start-btn">Start Game</button>
       </div>
     </div>
+
     <script src="card.js"></script>
-    <div class="ad-container">
-      <div class="ad-banner">
-        <ins
-          class="kakao_ad_area"
-          style="display: none"
-          data-ad-unit="DAN-g78Yb9QoFxH0uLhL"
-          data-ad-width="320"
-          data-ad-height="100"
-        ></ins>
-        <script
-          type="text/javascript"
-          src="//t1.daumcdn.net/kas/static/ba.min.js"
-          async
-        ></script>
-      </div>
-    </div>
   </body>
 </html>

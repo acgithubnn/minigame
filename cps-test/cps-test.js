@@ -5,20 +5,26 @@ const totalClicks = document.getElementById("totalClicks");
 const currentCps = document.getElementById("currentCps");
 const startButton = document.getElementById("startButton");
 const clickMarkers = document.getElementById("clickMarkers");
+const gameInfo = document.getElementById("gameInfo");
 
 let clicks = 0;
 let timer = 10;
 let interval;
 let cpsData = [];
 let chart;
+let isGameRunning = false;
 
 function startGame() {
+  if (isGameRunning) return;
+
   clicks = 0;
   timer = 10;
   cpsData = [];
+  isGameRunning = true;
   updateDisplay();
-  startButton.disabled = true;
-  clickArea.style.pointerEvents = "auto";
+  startButton.classList.add("hidden");
+  gameInfo.classList.remove("hidden");
+  clickArea.style.cursor = "pointer";
   interval = setInterval(updateTimer, 100);
   initChart();
 }
@@ -43,13 +49,21 @@ function updateCPS() {
 
 function endGame() {
   clearInterval(interval);
-  clickArea.style.pointerEvents = "none";
-  startButton.disabled = false;
-  alert(
-    `Game Over! Total Clicks: ${clicks}, Average CPS: ${(clicks / 10).toFixed(
-      2
-    )}`
-  );
+  isGameRunning = false;
+  clickArea.style.cursor = "default";
+  startButton.classList.remove("hidden");
+  gameInfo.classList.add("hidden");
+
+  const averageCPS = (clicks / 10).toFixed(2);
+  saveResults(clicks, averageCPS);
+
+  // 결과 페이지로 리다이렉트
+  window.location.href = "result.html";
+}
+
+function saveResults(totalClicks, averageCPS) {
+  localStorage.setItem("totalClicks", totalClicks);
+  localStorage.setItem("averageCPS", averageCPS);
 }
 
 function updateDisplay() {
@@ -114,7 +128,7 @@ function updateChart() {
 }
 
 clickArea.addEventListener("click", (e) => {
-  if (timer > 0) {
+  if (isGameRunning) {
     clicks++;
     updateDisplay();
     addClickMarker(e);

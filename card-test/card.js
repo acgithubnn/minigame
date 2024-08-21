@@ -27,6 +27,7 @@ const startBtn = document.getElementById("startBtn");
 const easyBtn = document.getElementById("easyBtn");
 const mediumBtn = document.getElementById("mediumBtn");
 const hardBtn = document.getElementById("hardBtn");
+const difficultyDescription = document.getElementById("difficultyDescription");
 
 function createCard(emoji) {
   const card = document.createElement("div");
@@ -51,7 +52,7 @@ function startGame() {
   flippedCards = [];
   score = 0;
   scoreElement.textContent = score;
-  canFlip = true;
+  canFlip = false; // 미리 보기 중에는 카드를 뒤집을 수 없게 설정
 
   let gameEmojis, gridColumns, timeLimit;
   switch (difficulty) {
@@ -82,15 +83,30 @@ function startGame() {
     gameBoard.appendChild(card);
   });
 
-  timeLeft = timeLimit;
-  updateTimer();
-  timerInterval = setInterval(() => {
-    timeLeft--;
+  // 모든 카드를 1초 동안 보여줍니다
+  cards.forEach((card) => {
+    card.textContent = card.dataset.emoji;
+    card.classList.add("flipped");
+  });
+
+  // 1초 후 카드를 다시 뒤집고 게임을 시작합니다
+  setTimeout(() => {
+    cards.forEach((card) => {
+      card.textContent = "";
+      card.classList.remove("flipped");
+    });
+    canFlip = true; // 이제 카드를 뒤집을 수 있게 설정
+
+    timeLeft = timeLimit;
     updateTimer();
-    if (timeLeft <= 0) {
-      clearInterval(timerInterval);
-      endGame();
-    }
+    timerInterval = setInterval(() => {
+      timeLeft--;
+      updateTimer();
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        endGame();
+      }
+    }, 1000);
   }, 1000);
 }
 
@@ -162,6 +178,23 @@ function setDifficulty(level) {
     btn.classList.remove("active")
   );
   document.getElementById(`${level}Btn`).classList.add("active");
+  updateDifficultyDescription();
+}
+
+function updateDifficultyDescription() {
+  let description;
+  switch (difficulty) {
+    case "easy":
+      description = "Easy: 6쌍의 카드, 60초";
+      break;
+    case "medium":
+      description = "Medium: 8쌍의 카드, 90초";
+      break;
+    case "hard":
+      description = "Hard: 12쌍의 카드, 120초";
+      break;
+  }
+  difficultyDescription.textContent = description;
 }
 
 easyBtn.addEventListener("click", () => setDifficulty("easy"));
@@ -170,3 +203,4 @@ hardBtn.addEventListener("click", () => setDifficulty("hard"));
 startBtn.addEventListener("click", startGame);
 
 setDifficulty("medium"); // Set default difficulty
+updateDifficultyDescription(); // Initial description update
